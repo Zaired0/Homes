@@ -1,0 +1,12 @@
+name: Homes
+version: '${project.version}'
+main: homes.homes.Homes
+api-version: 1.19
+authors: [Eliott Deriaz]
+commands:
+  sethome:
+    description: Set home for the command sender
+    usage: /sethome
+    aliases: sh
+    permission: homes.homes.setHome
+    permission-message: You don't have the permission to use this command.

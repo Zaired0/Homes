@@ -1,0 +1,5 @@
+name: Homes
+version: '1.0-SNAPSHOT'
+main: homes.homes.Homes
+api-version: 1.19
+authors: [Eliott Deriaz]
