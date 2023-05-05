@@ -1,5 +1,6 @@
 package homes.homes.Class;
 
+import homes.homes.Homes;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -30,7 +31,7 @@ public class PlayerHome implements Serializable {
 
     public boolean setPlayerHome(){
         try{
-            FileOutputStream fileOut = new FileOutputStream("./homes/" + Name +".ser");
+            FileOutputStream fileOut = new FileOutputStream(Homes.HOMESPATH + Name +".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this);
             out.close();
@@ -50,7 +51,7 @@ public class PlayerHome implements Serializable {
         Player player = Bukkit.getPlayer(playerName);
 
         try {
-            FileInputStream fileIn = new FileInputStream("./homes/" + playerName +".ser");
+            FileInputStream fileIn = new FileInputStream(Homes.HOMESPATH + playerName +".ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             pl = (PlayerHome) in.readObject();
             in.close();
