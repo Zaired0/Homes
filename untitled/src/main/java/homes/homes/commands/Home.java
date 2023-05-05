@@ -1,6 +1,7 @@
 package homes.homes.commands;
 
 import homes.homes.Class.PlayerHome;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,9 +17,11 @@ public class Home implements CommandExecutor {
 
         Player p = (Player) commandSender;
 
-        if(loc != null){
-            p.teleport(loc);
+        if(loc == null){
+            return false;
         }
+
+        p.teleport(loc);
 
         return true;
     }

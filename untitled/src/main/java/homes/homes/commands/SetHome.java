@@ -25,7 +25,7 @@ public class SetHome implements CommandExecutor {
             return true;
         }
 
-        PlayerHome ph = new PlayerHome(p.getName(), p.getLocation());
+        PlayerHome ph = new PlayerHome(p.getName(), p.getLocation(), p.getLocation().getWorld().getName());
 
         ph.setPlayerHome();
 

@@ -12,18 +12,18 @@ public class PlayerHome implements Serializable {
     private double x;
     private double y;
     private double z;
-
     private String world;
 
-    public PlayerHome(String name, Location location) {
+    public PlayerHome(String name, Location location, String world) {
         this.Name = name;
         this.x = location.getX();
         this.y = location.getY();
         this.z = location.getZ();
+        this.world = world;
     }
 
     public Location getHome(){
-        World w = Bukkit.getWorld("overworld");
+        World w = Bukkit.getWorld(this.world);
         Location l = new Location(w,this.x,this.y,this.z);
         return l;
     }
