@@ -16,3 +16,9 @@ commands:
     aliases: h
     permission: homes.homes.home
     permission-message: You don't have the permission to use this command.
+  gethome:
+    description: Get your home location
+    usage: /gethome
+    aliases: gh
+    permission: homes.homes.gethome
+    permission-message: You don't have the permission to use this command.

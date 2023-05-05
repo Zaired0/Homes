@@ -1,5 +1,6 @@
 package homes.homes;
 
+import homes.homes.commands.GetHome;
 import homes.homes.commands.Home;
 import homes.homes.commands.SetHome;
 import homes.homes.handlers.torchHandler;
@@ -15,6 +16,7 @@ public final class Homes extends JavaPlugin {
 
         getCommand("sethome").setExecutor(new SetHome());
         getCommand("home").setExecutor(new Home());
+        getCommand("gethome").setExecutor(new GetHome());
         //getCommand("home").setExecutor(new Home());
 
         //new torchHandler(this);
