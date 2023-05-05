@@ -16,7 +16,7 @@ public final class Homes extends JavaPlugin {
         getCommand("sethome").setExecutor(new SetHome());
         getCommand("home").setExecutor(new Home());
 
-        new torchHandler(this);
+        //new torchHandler(this);
     }
 
     @Override

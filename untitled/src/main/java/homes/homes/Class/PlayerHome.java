@@ -1,28 +1,36 @@
 package homes.homes.Class;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 import java.io.*;
 
 public class PlayerHome implements Serializable {
     private String Name;
-    private Location Home;
+    private double x;
+    private double y;
+    private double z;
+
+    private String world;
 
     public PlayerHome(String name, Location location) {
         this.Name = name;
-        this.Home = location;
+        this.x = location.getX();
+        this.y = location.getY();
+        this.z = location.getZ();
     }
 
     public Location getHome(){
-        return this.Home;
+        World w = Bukkit.getWorld("overworld");
+        Location l = new Location(w,this.x,this.y,this.z);
+        return l;
     }
 
     public boolean setPlayerHome(){
         try{
-            FileOutputStream fileOut = new FileOutputStream("/homes/" + Name +".ser");
+            FileOutputStream fileOut = new FileOutputStream("./homes/" + Name +".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this);
             out.close();
@@ -42,7 +50,7 @@ public class PlayerHome implements Serializable {
         Player player = Bukkit.getPlayer(playerName);
 
         try {
-            FileInputStream fileIn = new FileInputStream("/homes/" + playerName +".ser");
+            FileInputStream fileIn = new FileInputStream("./homes/" + playerName +".ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             pl = (PlayerHome) in.readObject();
             in.close();

@@ -2,7 +2,7 @@
   <artifact type="jar" name="homes:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/homes_jar</output-path>
     <root id="archive" name="homes.jar">
-      <element id="module-output" name="homes (1)" />
+      <element id="module-output" name="homes" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </root>
   </artifact>
