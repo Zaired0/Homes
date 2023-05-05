@@ -1,5 +1,6 @@
 package homes.homes;
 
+import homes.homes.commands.Home;
 import homes.homes.commands.SetHome;
 import homes.homes.handlers.torchHandler;
 import org.bukkit.Bukkit;
@@ -13,6 +14,7 @@ public final class Homes extends JavaPlugin {
         Bukkit.getLogger().info("Hello World");
 
         getCommand("sethome").setExecutor(new SetHome());
+        getCommand("home").setExecutor(new Home());
 
         new torchHandler(this);
     }

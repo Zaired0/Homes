@@ -1,6 +1,7 @@
 package homes.homes.commands;
 
 import org.bukkit.command.Command;
+import homes.homes.Class.PlayerHome;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -24,7 +25,11 @@ public class SetHome implements CommandExecutor {
             return true;
         }
 
+        PlayerHome ph = new PlayerHome(p.getName(), p.getLocation());
 
+        ph.setPlayerHome();
+
+        p.sendMessage("Your home has been set on " + p.getLocation().toString());
 
         return true;
     }
