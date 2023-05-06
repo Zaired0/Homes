@@ -11,7 +11,7 @@ commands:
     permission: homes.homes.setHome
     permission-message: You don't have the permission to use this command.
   home:
-    description: Teleport to the home for the command sender
+    description: Teleport to the home of the command sender
     usage: /home
     aliases: h
     permission: homes.homes.home

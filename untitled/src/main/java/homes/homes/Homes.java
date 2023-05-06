@@ -1,3 +1,10 @@
+/*
+*
+* Author: Eliott Deriaz alias Zaired
+* Date: 06.05.2023
+* Description: Plugin startup file
+*
+* */
 package homes.homes;
 
 import homes.homes.commands.GetHome;
@@ -8,27 +15,33 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Homes extends JavaPlugin {
-    public static String HOMESPATH = "/Homes/playerHomes/";
+    public static String HOMESPATH = "plugins/Homes/playerHomes/";              //players home folder path
     @Override
     public void onEnable() {
-        // Plugin startup logic System.getProperty("user.dir") +
-        //File f = new File(HOMESPATH);
+        // Plugin startup logic
 
-        if (!getDataFolder().exists()) getDataFolder().mkdir();
-        saveDefaultConfig();
+        File homeFile = new File(HOMESPATH);                    //home folder
 
+        //create data folder
+        if (!getDataFolder().exists()) {
+            getDataFolder().mkdir();
+            Bukkit.getLogger().info("datafolder successfully created");
+        }
+
+        //create players home folder
+        if (!homeFile.exists()) {
+            homeFile.mkdir();
+            Bukkit.getLogger().info("player home folder successfully created");
+        }
+
+        //get commands
         getCommand("sethome").setExecutor(new SetHome());
         getCommand("home").setExecutor(new Home());
         getCommand("gethome").setExecutor(new GetHome());
-
-        //getCommand("home").setExecutor(new Home());
-
-        //new torchHandler(this);
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        Bukkit.getLogger().info("Goodbye World");
     }
 }
