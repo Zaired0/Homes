@@ -1,0 +1,5 @@
+homes\homes\commands\GetHome.class
+homes\homes\commands\SetHome.class
+homes\homes\Homes.class
+homes\homes\Class\PlayerHome.class
+homes\homes\commands\Home.class

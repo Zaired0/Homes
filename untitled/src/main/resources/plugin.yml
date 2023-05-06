@@ -1,0 +1,24 @@
+name: Homes
+version: '${project.version}'
+main: homes.homes.Homes
+api-version: 1.19
+authors: [Eliott Deriaz]
+commands:
+  sethome:
+    description: Set home for the command sender
+    usage: /sethome
+    aliases: sh
+    permission: homes.homes.setHome
+    permission-message: You don't have the permission to use this command.
+  home:
+    description: Teleport to the home of the command sender
+    usage: /home
+    aliases: h
+    permission: homes.homes.home
+    permission-message: You don't have the permission to use this command.
+  gethome:
+    description: Get your home location
+    usage: /gethome
+    aliases: gh
+    permission: homes.homes.gethome
+    permission-message: You don't have the permission to use this command.
